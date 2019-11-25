@@ -4,7 +4,7 @@
 //  Copyright © 2019 Andries Bron, www.github.com/andriesbron. All rights reserved.
 //
 
-#include "autocorrelation.h"
+#include "autocorrelate.h"
 #include "populations.h"
 
 /**
