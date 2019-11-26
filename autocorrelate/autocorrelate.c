@@ -124,7 +124,7 @@ ACOR_returnValue_t ACOR_autoCorrelate_float (float *apuc_Xi, uint16_t auc_XiSize
             t_retVal = ACOR_DIVISION_BY_ZERO_SET_MAX;
             apuc_autocorrelate[t] = f_floatmax;
             */
-            t_retVal = ACOR_DIVISION_BY_ZERO_SET_ZERO;
+            t_retVal = ACOR_DIVISIONS_BY_ZERO_SET_ZERO;
             apuc_autocorrelate[t] = 0;          
         } else {
             apuc_autocorrelate[t] = f_n / f_d;
