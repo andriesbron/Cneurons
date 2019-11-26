@@ -58,7 +58,7 @@ PRCPT_returnValue PRCPT_getYBetweenPoints (unsigned char auc_x, unsigned char *a
     return PRCPT_SUCCESS;
 }
 
-PRCPT_returnValue PRCPT_predict_float (uint16_t *apuc_inputs, PRCPT_perceptron_16 *apt_perceptron, uint8_t *apuc_prediction)
+PRCPT_returnValue PRCPT_predict_float (float *apuc_inputs, PRCPT_perceptron_float_t *apt_perceptron, uint8_t *apuc_prediction)
 {
     PRCPT_returnValue retVal=PRCPT_SUCCESS;
     uint8_t uc_i;
@@ -81,7 +81,7 @@ PRCPT_returnValue PRCPT_predict_float (uint16_t *apuc_inputs, PRCPT_perceptron_1
     return retVal;
 }
 
-PRCPT_returnValue PRCPT_predict_8u (uint8_t *apuc_inputs, PRCPT_perceptron_8 *apt_perceptron, uint8_t *apuc_prediction)
+PRCPT_returnValue PRCPT_predict_8u (uint8_t *apuc_inputs, PRCPT_perceptron_8_t *apt_perceptron, uint8_t *apuc_prediction)
 {
     uint8_t uc_i;
     uint16_t ui_sum=0;
@@ -96,7 +96,7 @@ PRCPT_returnValue PRCPT_predict_8u (uint8_t *apuc_inputs, PRCPT_perceptron_8 *ap
     return PRCPT_SUCCESS;
 }
 
-PRCPT_returnValue PRCPT_predict_16u (uint16_t *apuc_inputs, PRCPT_perceptron_16 *apt_perceptron, uint8_t *apuc_prediction)
+PRCPT_returnValue PRCPT_predict_16u (uint16_t *apuc_inputs, PRCPT_perceptron_16_t *apt_perceptron, uint8_t *apuc_prediction)
 {
   unsigned char uc_i;
   unsigned int ui_sum=0;
