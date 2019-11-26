@@ -4,7 +4,7 @@
 //  Copyright © 2019 Andries Bron, www.github.com/andriesbron. All rights reserved.
 //
 
-#include "autocorrelate.h"
+#include "autocorrelation.h"
 #include "populations.h"
 
 /**
@@ -83,7 +83,7 @@ ACOR_returnValue_t ACOR_autoCorrelate_8u (uint8_t *apuc_Xi, uint16_t auc_XiSize,
 ACOR_returnValue_t ACOR_autoCorrelate_8s (int8_t *apuc_Xi, uint16_t auc_XiSize, int8_t *apuc_autocorrelate, uint16_t auc_autocorrelateSize)
 {
     // rewrite or call the 8u?
-    return ACOR_FAULT_DO_NOT_USE_RESULT;
+    return ACOR_UNKNOWN_ERROR;
 }
 
 ACOR_returnValue_t ACOR_autoCorrelate_float (float *apuc_Xi, uint16_t auc_XiSize, float *apuc_autocorrelate, uint16_t auc_autocorrelateSize)
@@ -106,6 +106,8 @@ ACOR_returnValue_t ACOR_autoCorrelate_float (float *apuc_Xi, uint16_t auc_XiSize
 #endif
     for (int t = 0; t < auc_autocorrelateSize; t ++)
     {
+        f_n = 0;
+        f_d = 0;
 #if ACOR_DEBUG
         printf ("\nt: %d\n-------------------------------------------------------------------\n", t);
 #endif
@@ -119,13 +121,8 @@ ACOR_returnValue_t ACOR_autoCorrelate_float (float *apuc_Xi, uint16_t auc_XiSize
 #endif
         }
         if (f_d == 0u) {
-            /*
-            @todo Setting correlation to max is most likely not proper, division by zero, I think means that it actually cannot correlate. Need to sort that out, I am not a mathecian you know.
             t_retVal = ACOR_DIVISION_BY_ZERO_SET_MAX;
             apuc_autocorrelate[t] = f_floatmax;
-            */
-            t_retVal = ACOR_DIVISIONS_BY_ZERO_SET_ZERO;
-            apuc_autocorrelate[t] = 0;          
         } else {
             apuc_autocorrelate[t] = f_n / f_d;
         }
