@@ -36,7 +36,6 @@ typedef enum ACOR_returnValues {
   , ACOR_DIVISIONS_BY_ZERO_SET_ZERO // The algorithm prevented division by zero and set the result to zero.
   , ACOR_INPUT_OUTBOUND
   , ACOR_FAULT_DO_NOT_USE_RESULT
-  //, ACOR_UNKNOWN_ERROR
 } ACOR_returnValue_t;
 
 
