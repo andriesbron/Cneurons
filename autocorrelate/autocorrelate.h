@@ -40,13 +40,11 @@ typedef enum ACOR_returnValues {
 
 
 /**
- * @attention For use: take notice that the first value is always 1, don't train on that value.
  * @brief Autocorrelator for float data.
  * @param apuc_Xi Sample array of floats
  * @param auc_XiSize Size of sample array
- * @param apuc_autocorrelate Autocorrelation array (result returned), see also auc_autocorrelateSize
+ * @param apuc_autocorrelate Autocorrelation array, see also auc_autocorrelateSize
  * @param auc_autocorrelateSize Size of correlation array (apuc_autocorrelate). If you want to test a delay for one sample, the size should be 1. Size 2 means, two samples delay etcetera.
- * @attention might return a value not equal to ACOR_SUCCESS, e.g. divisions by zero might happen, however the result is still usefull
  */
 ACOR_returnValue_t ACOR_autoCorrelate_float (float *apuc_Xi, uint16_t auc_XiSize, float *apuc_autocorrelate, uint16_t auc_autocorrelateSize);
 
