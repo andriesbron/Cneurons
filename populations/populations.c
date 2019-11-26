@@ -3,23 +3,8 @@
 //
 
 #include <math.h>
+#include <float.h>
 #include "populations.h"
-
-/**
- * @brief Macro's for getting the max values of types.
- */
-#define ISSIGNED(t) (((t)(-1)) < ((t) 0))
-#define UMAXOF(t) (((0x1ULL << ((sizeof(t) * 8ULL) - 1ULL)) - 1ULL) | \
-                    (0xFULL << ((sizeof(t) * 8ULL) - 4ULL)))
-#define SMAXOF(t) (((0x1ULL << ((sizeof(t) * 8ULL) - 1ULL)) - 1ULL) | \
-                    (0x7ULL << ((sizeof(t) * 8ULL) - 4ULL)))
-#define MAXOF(t) ((unsigned long long) (issigned(t) ? smaxof(t) : umaxof(t)))
-
-#define MAX_OF(type) \
-    (((type)(~0LLU) > (type)((1LLU<<((sizeof(type)<<3)-1))-1LLU)) ? (long long unsigned int)(type)(~0LLU) : (long long unsigned int)(type)((1LLU<<((sizeof(type)<<3)-1))-1LLU))
-#define MIN_OF(type) \
-    (((type)(1LLU<<((sizeof(type)<<3)-1)) < (type)1) ? (long long int)((~0LLU)-((1LLU<<((sizeof(type)<<3)-1))-1LLU)) : 0LL)
-
 
 
 
@@ -31,33 +16,35 @@
 void POPU_population_float (float * af_X, uint16_t ai_Size, float * af_max, float * af_min, float *af_mean, float * af_stdev)
 {
     float f_sum=0;
-    float f_max=MIN_OF(float);
-    float f_min=UMAXOF(float);
+    float f_max=-FLT_MAX;
+    float f_min=FLT_MAX;
     float f_stdev=0;
     
     uint16_t uc_i;
 
     for (uc_i=0; uc_i < ai_Size; uc_i++)
     {
+        printf("Value: %f\n",af_X[uc_i]);
         f_sum += af_X[uc_i];
         if (af_X[uc_i] > f_max) {
             f_max = af_X[uc_i];
-        } else if (af_X[uc_i] < f_min) {
+        }
+        if (af_X[uc_i] < f_min) {
             f_min = af_X[uc_i];
         }
-        
     }
-    
     *af_mean = f_sum/ai_Size;
-    printf ("\nmymean %f passed mean %f\n",f_sum/ai_Size, *af_mean);
+#if POPULATION_DEBUG
+    printf ("\nMean %f Sum %f Size: %d\n\n", *af_mean ,f_sum, ai_Size);
+#endif
     for (uc_i=0; uc_i < ai_Size; uc_i++)
     {
-        f_stdev += pow(af_X[uc_i] - *af_mean, 2);
+        f_stdev += pow (af_X[uc_i] - *af_mean, 2);
     }
     
     *af_max = f_max;
     *af_min = f_min;
-    *af_stdev = sqrt(f_stdev/ai_Size);
+    *af_stdev = sqrt (f_stdev/ai_Size);
 }
 
 float POPU_mean_float (float * af_X, uint16_t ai_Size)
@@ -65,15 +52,15 @@ float POPU_mean_float (float * af_X, uint16_t ai_Size)
     float f_mean=0;
     uint16_t uc_i;
 
-#if ACOR_DEBUG
+#if POPULATION_DEBUG
         printf("sizeof(float) %d\n", (uint8_t)sizeof(float));
 #endif
     for (uc_i=0; uc_i < ai_Size; uc_i++)
     {
         f_mean += af_X[uc_i];
     }
-#if ACOR_DEBUG
-    printf("Sum of mean: %f length of array %d", f_mean, auc_XLength);
+#if POPULATION_DEBUG
+    printf("Sum of mean: %f length of array %d", f_mean, ai_Size);
 #endif
     f_mean = f_mean/ai_Size;
 
