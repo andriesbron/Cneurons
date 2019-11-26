@@ -1,4 +1,3 @@
- 
 //
 //  perceptron.h
 //
@@ -28,7 +27,7 @@ typedef enum PRCPT_returnValues {
 typedef struct PRCPT_perceptrons_8u {
   uint16_t inputLength;
   uint8_t *weights;
-} PRCPT_perceptron_8;
+} PRCPT_perceptron_8_t;
 
 /**
  * @brief 16 bits unsigned perceptron.
@@ -36,7 +35,7 @@ typedef struct PRCPT_perceptrons_8u {
 typedef struct PRCPT_perceptrons_16u {
   uint16_t inputLength;
   uint16_t *weights;
-} PRCPT_perceptron_16;
+} PRCPT_perceptron_16_t;
 
 /**
  * @brief 16 bits unsigned perceptron.
@@ -44,7 +43,7 @@ typedef struct PRCPT_perceptrons_16u {
 typedef struct PRCPT_perceptrons_float {
   uint16_t inputLength;
   float *weights;
-} PRCPT_perceptron_float;
+} PRCPT_perceptron_float_t;
 
 
 /**
@@ -54,7 +53,7 @@ typedef struct PRCPT_perceptrons_float {
  * @param apuc_prediction Pointer to the prediction result, this is what you get back from the prediction.
  * @return unsigned char 1 if apuc_inputs are estimated to be in class, otherwise 0.
  */
-PRCPT_returnValue PRCPT_predict_float (uint16_t *apuc_inputs, PRCPT_perceptron_16 *apt_perceptron, uint8_t *apuc_prediction);
+PRCPT_returnValue PRCPT_predict_float (float *apuc_inputs, PRCPT_perceptron_float_t *apt_perceptron, uint8_t *apuc_prediction);
 
 /**
  * @brief Perceptron prediction for 8 bits unsigned values
@@ -63,7 +62,7 @@ PRCPT_returnValue PRCPT_predict_float (uint16_t *apuc_inputs, PRCPT_perceptron_1
  * @param apuc_prediction Pointer to the prediction result, this is what you get back from the prediction.
  * @return unsigned char 1 if apuc_inputs are estimated to be in class, otherwise 0.
  */
-PRCPT_returnValue PRCPT_predict_8u (uint8_t *apuc_inputs, PRCPT_perceptron_8 *apt_perceptron, uint8_t *apuc_prediction);
+PRCPT_returnValue PRCPT_predict_8u (uint8_t *apuc_inputs, PRCPT_perceptron_8_t *apt_perceptron, uint8_t *apuc_prediction);
 
 /**
  * @brief Perceptron prediction for 16 bits unsigned values
@@ -72,7 +71,7 @@ PRCPT_returnValue PRCPT_predict_8u (uint8_t *apuc_inputs, PRCPT_perceptron_8 *ap
  * @param apuc_prediction Pointer to the prediction result, this is what you get back from the prediction.
  * @return unsigned char 1 if apuc_inputs are estimated to be in class, otherwise 0.
  */
-PRCPT_returnValue PRCPT_predict_16u (uint16_t *apuc_inputs, PRCPT_perceptron_16 *apt_perceptron, uint8_t *apuc_prediction);
+PRCPT_returnValue PRCPT_predict_16u (uint16_t *apuc_inputs, PRCPT_perceptron_16_t *apt_perceptron, uint8_t *apuc_prediction);
 
 
 
