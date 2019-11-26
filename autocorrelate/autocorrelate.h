@@ -30,12 +30,13 @@
 typedef enum ACOR_returnValues {
   ACOR_SUCCESS
   , ACOR_INPUT_OUTBOUND_DIVISION_BY_ZERO // When wrong input data was given, however, the algorithm by nature will not divide by zero.
-  , ACOR_DIVISION_BY_ZERO // The algorithm divided by zero and returned immediately.
-  , ACOR_DIVISION_BY_ZERO_SET_MAX // The algorithm prevented division by zero and set the result to the max value of its type.
-  , ACOR_DIVISION_BY_ZERO_SET_MIN // The algorithm prevented division by zero and set the result to the min value of its type.
-  , ACOR_DIVISION_BY_ZERO_SET_ZERO // The algorithm prevented division by zero and set the result to zero.
+  , ACOR_DIVISIONS_BY_ZERO // The algorithm divided by zero and returned immediately.
+  , ACOR_DIVISIONS_BY_ZERO_SET_MAX // The algorithm prevented division by zero and set the result to the max value of its type.
+  , ACOR_DIVISIONS_BY_ZERO_SET_MIN // The algorithm prevented division by zero and set the result to the min value of its type.
+  , ACOR_DIVISIONS_BY_ZERO_SET_ZERO // The algorithm prevented division by zero and set the result to zero.
   , ACOR_INPUT_OUTBOUND
-  , ACOR_UNKNOWN_ERROR
+  , ACOR_FAULT_DO_NOT_USE_RESULT
+  //, ACOR_UNKNOWN_ERROR
 } ACOR_returnValue_t;
 
 
@@ -45,6 +46,7 @@ typedef enum ACOR_returnValues {
  * @param auc_XiSize Size of sample array
  * @param apuc_autocorrelate Autocorrelation array, see also auc_autocorrelateSize
  * @param auc_autocorrelateSize Size of correlation array (apuc_autocorrelate). If you want to test a delay for one sample, the size should be 1. Size 2 means, two samples delay etcetera.
+ * @attention might return a value not equal to ACOR_SUCCESS, e.g. divisions by zero might happen, however the result is still usefull
  */
 ACOR_returnValue_t ACOR_autoCorrelate_float (float *apuc_Xi, uint16_t auc_XiSize, float *apuc_autocorrelate, uint16_t auc_autocorrelateSize);
 
