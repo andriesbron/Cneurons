@@ -83,7 +83,7 @@ ACOR_returnValue_t ACOR_autoCorrelate_8u (uint8_t *apuc_Xi, uint16_t auc_XiSize,
 ACOR_returnValue_t ACOR_autoCorrelate_8s (int8_t *apuc_Xi, uint16_t auc_XiSize, int8_t *apuc_autocorrelate, uint16_t auc_autocorrelateSize)
 {
     // rewrite or call the 8u?
-    return ACOR_UNKNOWN_ERROR;
+    return ACOR_FAULT_DO_NOT_USE_RESULT;
 }
 
 ACOR_returnValue_t ACOR_autoCorrelate_float (float *apuc_Xi, uint16_t auc_XiSize, float *apuc_autocorrelate, uint16_t auc_autocorrelateSize)
