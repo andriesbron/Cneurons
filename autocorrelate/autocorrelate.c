@@ -119,8 +119,13 @@ ACOR_returnValue_t ACOR_autoCorrelate_float (float *apuc_Xi, uint16_t auc_XiSize
 #endif
         }
         if (f_d == 0u) {
+            /*
+            @todo Setting correlation to max is most likely not proper, division by zero, I think means that it actually cannot correlate. Need to sort that out, I am not a mathecian you know.
             t_retVal = ACOR_DIVISION_BY_ZERO_SET_MAX;
             apuc_autocorrelate[t] = f_floatmax;
+            */
+            t_retVal = ACOR_DIVISION_BY_ZERO_SET_MIN;
+            apuc_autocorrelate[t] = 0;          
         } else {
             apuc_autocorrelate[t] = f_n / f_d;
         }
