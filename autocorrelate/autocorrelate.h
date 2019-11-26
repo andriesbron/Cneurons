@@ -31,7 +31,9 @@ typedef enum ACOR_returnValues {
   ACOR_SUCCESS
   , ACOR_INPUT_OUTBOUND_DIVISION_BY_ZERO // When wrong input data was given, however, the algorithm by nature will not divide by zero.
   , ACOR_DIVISION_BY_ZERO // The algorithm divided by zero and returned immediately.
-  , ACOR_DIVISION_BY_ZERO_SET_MAX // The algorithm prevented division by zero and set results to the max value of its type.
+  , ACOR_DIVISION_BY_ZERO_SET_MAX // The algorithm prevented division by zero and set the result to the max value of its type.
+  , ACOR_DIVISION_BY_ZERO_SET_MIN // The algorithm prevented division by zero and set the result to the min value of its type.
+  , ACOR_DIVISION_BY_ZERO_SET_ZERO // The algorithm prevented division by zero and set the result to zero.
   , ACOR_INPUT_OUTBOUND
   , ACOR_UNKNOWN_ERROR
 } ACOR_returnValue_t;
