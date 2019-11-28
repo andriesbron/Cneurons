@@ -6,18 +6,9 @@
 
 
 #include <stdio.h>
+#include <float.h>
 #include "perceptron.h"
 
-
-/**
- * @brief Macro's for getting the max values of types.
- */
-#define ISSIGNED(t) (((t)(-1)) < ((t) 0))
-#define UMAXOF(t) (((0x1ULL << ((sizeof(t) * 8ULL) - 1ULL)) - 1ULL) | \
-                    (0xFULL << ((sizeof(t) * 8ULL) - 4ULL)))
-#define SMAXOF(t) (((0x1ULL << ((sizeof(t) * 8ULL) - 1ULL)) - 1ULL) | \
-                    (0x7ULL << ((sizeof(t) * 8ULL) - 4ULL)))
-#define MAXOF(t) ((unsigned long long) (issigned(t) ? smaxof(t) : umaxof(t)))
 
 
 PRCPT_returnValue PRCPT_getYOnLine (unsigned char auc_dy, unsigned char auc_offset, unsigned char auc_x);
@@ -29,6 +20,9 @@ PRCPT_returnValue PRCPT_getYBetweenPoints (unsigned char auc_x, unsigned char *a
 /****************************************************************************************************/
 
 
+/**
+ * @attention Not Tested
+ */
 PRCPT_returnValue PRCPT_getYOnLine (unsigned char auc_dy, unsigned char auc_offset, unsigned char auc_x)
 {
   unsigned char uc_y=0;
@@ -37,7 +31,7 @@ PRCPT_returnValue PRCPT_getYOnLine (unsigned char auc_dy, unsigned char auc_offs
 }
 
 /**
- * @attention not tested
+ * @attention Not Tested
  */
 PRCPT_returnValue PRCPT_getYBetweenPoints (unsigned char auc_x, unsigned char *auc_y, unsigned char auc_x1, unsigned char auc_y1, unsigned char auc_x2, unsigned char auc_y2)
 {
@@ -58,29 +52,48 @@ PRCPT_returnValue PRCPT_getYBetweenPoints (unsigned char auc_x, unsigned char *a
     return PRCPT_SUCCESS;
 }
 
+/**
+ * @brief Interface function, see decription on interface.
+ */
 PRCPT_returnValue PRCPT_predict_float (float *apuc_inputs, PRCPT_perceptron_float_t *apt_perceptron, uint8_t *apuc_prediction)
 {
     PRCPT_returnValue retVal=PRCPT_SUCCESS;
     uint8_t uc_i;
-    float ui_sum=0;
-    float f_floatmax=UMAXOF(float);
-    float f_inweight;
+    float f_sum=0;
+    float f_floatmax=FLT_MAX;
+    float f_in_weighted=0;
 
     for (uc_i=0; uc_i < apt_perceptron->inputLength; uc_i++) {
-        f_inweight = apt_perceptron->weights[uc_i] * apuc_inputs[uc_i];
-        if (ui_sum + f_inweight < f_floatmax) {
-            ui_sum += apt_perceptron->weights[uc_i] * apuc_inputs[uc_i];
+        // Calculate the part that becomes added next to check on saturation
+        f_in_weighted = apt_perceptron->weights[uc_i] * apuc_inputs[uc_i];
+        
+        if (f_sum <= (f_floatmax - f_in_weighted)) {
+            f_sum += f_in_weighted;
         } else {
-            ui_sum = f_floatmax;
+            // Network saturates
+            f_sum = f_floatmax;
             retVal = PRCPT_SATURATED;
+            break; // Exit loop
         }
+#if PRCPT_DEBUG
+        printf("Perceptron sum: %f f_inweighted: %f inputval: %f weight:%f\n", f_sum, f_in_weighted, apuc_inputs[uc_i], apt_perceptron->weights[uc_i]);
+#endif
     }
-    ui_sum = ui_sum/apt_perceptron->inputLength;
-    *apuc_prediction = (unsigned char)(ui_sum > 0);
-
+    // Add the bias or intercept (sklearn)
+    f_sum += apt_perceptron->intercept;
+    *apuc_prediction = (unsigned char)(f_sum > 0);
+#if PRCPT_DEBUG
+    printf("Perceptron sum: %f divided by %d results in %d \n\n", f_sum,apt_perceptron->inputLength, *apuc_prediction);
+#endif
+    
     return retVal;
 }
 
+/**
+ * @brief Interface function, see decription on interface.
+ * @attention Not Tested
+ * @bug result is not saturated when the total becomes to high
+ */
 PRCPT_returnValue PRCPT_predict_8u (uint8_t *apuc_inputs, PRCPT_perceptron_8_t *apt_perceptron, uint8_t *apuc_prediction)
 {
     uint8_t uc_i;
@@ -89,19 +102,29 @@ PRCPT_returnValue PRCPT_predict_8u (uint8_t *apuc_inputs, PRCPT_perceptron_8_t *
     for (uc_i=0; uc_i < apt_perceptron->inputLength; uc_i++) {
         ui_sum += apt_perceptron->weights[uc_i] * apuc_inputs[uc_i];
     }
-
-    ui_sum = ui_sum/apt_perceptron->inputLength;
+    // Add the bias or intercept (sklearn)
+    ui_sum += apt_perceptron->intercept;
     *apuc_prediction = (unsigned char)(ui_sum > 0);
 
     return PRCPT_SUCCESS;
 }
 
+/**
+ * @brief Interface function, see decription on interface.
+ * @attention Not Tested
+ * @bug result is not saturated when the total becomes to high
+ */
 PRCPT_returnValue PRCPT_predict_16u (uint16_t *apuc_inputs, PRCPT_perceptron_16_t *apt_perceptron, uint8_t *apuc_prediction)
 {
-  unsigned char uc_i;
-  unsigned int ui_sum=0;
-  
-  *apuc_prediction = (unsigned char)(ui_sum > 0);
-  
-  return PRCPT_SUCCESS;
+    unsigned char uc_i;
+    unsigned int ui_sum=0;
+
+    for (uc_i=0; uc_i < apt_perceptron->inputLength; uc_i++) {
+        ui_sum += apt_perceptron->weights[uc_i] * apuc_inputs[uc_i];
+    }
+    // Add the bias or intercept (sklearn)
+    ui_sum += apt_perceptron->intercept;
+    *apuc_prediction = (unsigned char)(ui_sum > 0);
+
+    return PRCPT_SUCCESS;
 }
