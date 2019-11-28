@@ -7,13 +7,25 @@
 - Using Cneurons is by copying an example, currently one, from the example directory. Then, run the python script, next, run the C application. The Python example exports the perceptron parameters as a result of the training into corresponding files for the C application.
 - Extend the example to your needs.
 
+First a philosophic note, if you don't want that, scroll down to the example(s).
+
+# Important to understand
+
+So you want to start getting into neural networks and artificial intelligence? There are two things you should never forget:
+
+- Mathematics remains applicable which is why:
+- The scientific method is always the preferable method.
+
+Because modern people have ceased to apply the scientific method, we are now bothered with a generation that thinks that artificial intelligence solves it all. They are wrong. The point is this, there is artificial intelligence because of the scientific method. Therefore, there is no higher intelligence than the intelligence that applies the scientific method, below that intelligence is artificial intelligence.
 
 
-## Detection of time series
+No matter how you train artificial intelligence, the laws of math remain applicable. So what? Well, that is not a problem because, you don't have to do the math 
+
+## Detection of sound
 
 Example: Strings and organ
 
-Example demonstrates how to use autocorrelation for detecting a sound, in this case, A note strings or a E note cathedral organ recorded from Garageband, just to demonstrate the work process.
+Example demonstrates how to use autocorrelation for detecting a sound, in this case, A note strings or a E note cathedral organ recorded from Garageband, just to demonstrate the work process and that it apparently can work.
 
 First correlate the input sequence:
 - ACOR_autoCorrelate_float (...)
