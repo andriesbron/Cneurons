@@ -11,6 +11,12 @@
 
 
 /**
+ * @brief Setting to 1 enables logging to console, for normal use, set to zero.
+ */
+#define PRCPT_DEBUG (1u)
+
+
+/**
  * @brief Return values for functions to handle results in a proper way.
  */
 typedef enum PRCPT_returnValues {
@@ -25,24 +31,27 @@ typedef enum PRCPT_returnValues {
  * @brief 8 bits unsigned perceptron.
  */
 typedef struct PRCPT_perceptrons_8u {
-  uint16_t inputLength;
-  uint8_t *weights;
+    uint16_t inputLength;
+    uint8_t *weights;
+    uint8_t intercept;
 } PRCPT_perceptron_8_t;
 
 /**
  * @brief 16 bits unsigned perceptron.
  */
 typedef struct PRCPT_perceptrons_16u {
-  uint16_t inputLength;
-  uint16_t *weights;
+    uint16_t inputLength;
+    uint16_t *weights;
+    uint16_t intercept;
 } PRCPT_perceptron_16_t;
 
 /**
  * @brief 16 bits unsigned perceptron.
  */
 typedef struct PRCPT_perceptrons_float {
-  uint16_t inputLength;
-  float *weights;
+    uint16_t inputLength;
+    float *weights;
+    float intercept;
 } PRCPT_perceptron_float_t;
 
 
