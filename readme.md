@@ -1,6 +1,6 @@
 
 
-# cNeurons
+# Cneurons
 
 - Easy starter for starters in Perceptron neural networks in C for embedded systems, the smaller controllers.
 - Concept of cNeurons is to train in Python and implement in embedded C.
