@@ -9,7 +9,7 @@
 
 
 
-## Detection of a time series
+## Detection of time series
 
 Example: Strings and organ
 
