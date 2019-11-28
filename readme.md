@@ -2,7 +2,7 @@
 
 # cNeurons
 
-- Easy starter in Perceptron neural networks in embedded C.
+- Easy starter for starters in Perceptron neural networks in C for embedded systems, the smaller controllers.
 - Concept of cNeurons is to train in Python and implement in embedded C.
 - Using cNeurons is by copying an example, currently one, from the example directory. Then, run the python script, next, run the C application. The Python example exports the perceptron parameters as a result of the training into corresponding files for the C application.
 - Extend the example to your needs.
