@@ -22,9 +22,12 @@ void POPU_population_float (float * af_X, uint16_t ai_Size, float * af_max, floa
     
     uint16_t uc_i;
 
+
     for (uc_i=0; uc_i < ai_Size; uc_i++)
     {
+#if POPULATION_DEBUG
         printf("Value: %f\n",af_X[uc_i]);
+#endif
         f_sum += af_X[uc_i];
         if (af_X[uc_i] > f_max) {
             f_max = af_X[uc_i];
