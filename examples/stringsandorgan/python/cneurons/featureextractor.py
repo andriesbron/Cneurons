@@ -154,6 +154,23 @@ class featureextractor:
         y = amplitude*numpy.sin (2*numpy.pi*t/steps)
     
         return t, y
-    
-    
+
+    def makeSoundSamples(self, infile, outfile, duration, start=0, end=20, prefix="sound_")
+        '''
+        @param infile input file to make samples from. INCLUDE EXTENTION!
+        @param outfile output file of the sample. DON'T ADD EXTENSION!
+        @param duration how small should the sound samples be
+        @param start start point in soundfile in seconds
+        @param end end point in soundfile in seconds
+        @param prefix replace the file prefix name
+        '''
+        nextpos=start
+        counter=0
+        while nextpos < end:
+            ffmpeg = "ffmpeg -y -ss "+str(nextpos)+" -t "+str(duration)+" -i "+str(infile) + " output/" + str(prefix)+ "_sample_" +str(counter)+ ".wav"
+            print(ffmpeg)
+            os.system(ffmpeg)
+            nextpos+=duration
+            nextpos=round(nextpos,1)
+            counter+=1
     
