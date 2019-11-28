@@ -16,8 +16,8 @@ Example: Strings and organ
 Example demonstrates how to use autocorrelation for detecting a time sequences, in this case, A note strings or a E note cathedral organ recorded from Garageband, just to demonstrate the work process.
 
 First correlate the input sequence:
-ACOR_autoCorrelate_float (...);
+- ACOR_autoCorrelate_float (...)
 Next create a featureset by catching the correlation sequence into a max, min, mean and std
-POPU_population_float (...);
+- POPU_population_float (...)
 Finally, predict the result:
-PRCPT_predict_float (...);
+- PRCPT_predict_float (...)
