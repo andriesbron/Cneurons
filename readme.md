@@ -11,12 +11,12 @@ First a philosophic note, if you don't want that, scroll down to the example(s).
 
 # Important to understand
 
-So you want to start getting into neural networks and artificial intelligence? There are two things you should never forget:
+Two things you should never forget:
 
 - Mathematics remains applicable which is why:
-- The scientific method is always the preferable method.
+- The scientific method is always the preferable method to solve a technological problem.
 
-There is no higher intelligence than the intelligence that applies the scientific method, below that intelligence is artificial intelligence.
+There is no higher intelligence than the intelligence that applies the scientific method, below that intelligence is artificial intelligence. The scientific method produces a mathematically correct solution that cannot fail or behaves within its tolerances. Artificial intelligence produces a mathematical relation between inputs and outputs according the way you tell it they are. You tell the network what it should do.
 
 Scientific method: synthesizing physics by modelling physics
 Artificial intelligence: approaching physics by relating inputs to outputs
