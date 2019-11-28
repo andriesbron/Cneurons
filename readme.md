@@ -17,7 +17,9 @@ Example demonstrates how to use autocorrelation for detecting a time sequences, 
 
 First correlate the input sequence:
 - ACOR_autoCorrelate_float (...)
+
 Next create a featureset by catching the correlation sequence into a max, min, mean and std
 - POPU_population_float (...)
+
 Finally, predict the result:
 - PRCPT_predict_float (...)
