@@ -16,7 +16,7 @@ Two things you should never forget:
 - Mathematics remains applicable which is why:
 - The scientific method is always the preferable method to solve a technological problem.
 
-'''There is no higher intelligence than the intelligence that applies the scientific method, below that intelligence is artificial intelligence. The scientific method produces a mathematically correct solution that cannot fail or behaves within its tolerances. Artificial intelligence produces a mathematical relation between inputs and outputs according the way you tell it they are. You tell the network what it should do.'''
+```There is no higher intelligence than the intelligence that applies the scientific method, below that intelligence is artificial intelligence. The scientific method produces a mathematically correct solution that cannot fail or behaves within its tolerances. Artificial intelligence produces a mathematical relation between inputs and outputs according the way you tell it they are. You tell the network what it should do.```
 
 
 No matter how you train artificial intelligence, the laws of math remain applicable. So what? Well, that is not a problem because, you don't have to do the math 
