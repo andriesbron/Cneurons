@@ -19,7 +19,7 @@ The most important thing when starting with neural networks and artificial intel
 
 **Two equations that share more than two unknown variables, cannot be solved. Also not by a neural network.**
 
-or, in case you think they can be solved
+Or, in case you train it by ignorance:
 
 **Two equations that share more than two unknown variables, can be solved but have multiple solutions. Also in a neural network.**
 
