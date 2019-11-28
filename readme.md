@@ -20,7 +20,9 @@ The difference between both is that the scientific method produces a mathematica
 
 The most important law of mathematics is:
 
-```Two equations that share more than two unknown variables, cannot be solved. Also not by a neural network.```
+```
+**Two equations that share more than two unknown variables, cannot be solved. Also not by a neural network.**
+```
 
 
 
