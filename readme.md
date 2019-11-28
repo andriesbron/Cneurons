@@ -16,11 +16,15 @@ So you want to start getting into neural networks and artificial intelligence? T
 - Mathematics remains applicable which is why:
 - The scientific method is always the preferable method.
 
-Because modern people have ceased to apply the scientific method, we are now bothered with a generation that thinks that artificial intelligence solves it all. They are wrong. The point is this, there is artificial intelligence because of the scientific method. Therefore, there is no higher intelligence than the intelligence that applies the scientific method, below that intelligence is artificial intelligence.
+There is no higher intelligence than the intelligence that applies the scientific method, below that intelligence is artificial intelligence.
+
+Scientific method: synthesizing physics by modelling physics
+Artificial intelligence: approaching physics by relating inputs to outputs
 
 
 No matter how you train artificial intelligence, the laws of math remain applicable. So what? Well, that is not a problem because, you don't have to do the math 
 
+# Examples
 ## Detection of sound
 
 Example: Strings and organ
