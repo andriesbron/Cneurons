@@ -28,7 +28,7 @@ It is very likely that you train a network by the latter concept.
 # Examples
 ## Detection of sound
 
-Example: Strings and organ
+Example: [Strings and organ](https://github.com/andriesbron/Cneurons/tree/master/examples/stringsandorgan)
 
 Example demonstrates how to use autocorrelation for detecting a sound, in this case, A note strings or a E note cathedral organ recorded from Garageband, just to demonstrate the work process and that it apparently can work.
 
