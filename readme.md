@@ -11,20 +11,19 @@ First a philosophic note, if you don't want that, scroll down to the example(s).
 
 # Important to understand
 
-- Mathematics remains applicable which is why:
-- The scientific method is always the preferable method to solve a technological problem.
+The highest form of intelligence is to apply the scientific method, below that intelligence is artificial intelligence. That is why the scientific method produced artificial intelligence. The preferable method to solve a technological problem is therefore the scientific method.
 
-The highest form of intelligence is to apply the scientific method, below that intelligence is artificial intelligence. That is why the scientific method produced artificial intelligence.
+The difference between both is that the scientific method produces a mathematically exact description of a behavior within the limits of its tolerances. Artificial intelligence produces a mathematical relation between inputs and outputs according the way you tell it to be. A neural network is not more powerful than the mind that trained it. There are very powerful neural networks and artificial intelligence.
 
-The difference between both is that the scientific method produces a mathematically exact description of its behavior within the limits of its tolerances. Artificial intelligence produces a mathematical relation between inputs and outputs according the way you tell it they should. You tell the network what it should do and what you don't tell it do, it will do something of which you don't know what it will be.
+The most important thing to keep in mind is this:
 
-The most important law of mathematics is:
-
-```
 **Two equations that share more than two unknown variables, cannot be solved. Also not by a neural network.**
-```
 
+or, in case you think they can be solved
 
+**Two equations that share more than two unknown variables, can be solved but have multiple solutions. Also in a neural network.**
+
+It is very likely that you train a network by the latter concept.
 
 # Examples
 ## Detection of sound
