@@ -7,6 +7,7 @@
 
 #include <stdio.h>
 
+#define POPULATION_DEBUG (0u)
 
 void POPU_population_float (float * af_X, uint16_t ai_Size, float * af_max, float * af_min,float *af_mean, float * af_stdev);
 
