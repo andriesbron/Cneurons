@@ -17,7 +17,7 @@
 /**
  * @brief Setting to 1 enables logging to console, for normal use, set to zero.
  */
-#define ACOR_DEBUG (1u)
+#define ACOR_DEBUG (0u)
 
 
 /**
