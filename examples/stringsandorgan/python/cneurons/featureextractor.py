@@ -119,7 +119,7 @@ class featureextractor:
 
         return autocorrelation
     
-    def signals_triangle(self, N=20, amplitude=1, frequency=1, steps=200):
+    def signals_triangle(self, N=20, amplitude=1, frequency=1, steps=200, noise=0.0):
         '''
         Generates time signal based on inverse FFT, adding sinusoidal waves.
         @param N number of harmonics, N=1 means f0.
@@ -141,6 +141,10 @@ class featureextractor:
                 y =[x+y for x,y in zip(a, b)]
                 a=y
 
+        if noise > 0.0:
+            b = list(numpy.random.normal(0,noise, steps))
+            y =[x+y for x,y in zip(a, b)]
+        
         return t, y
         
     def ellipse(self):
