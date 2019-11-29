@@ -30,5 +30,5 @@ It is very likely that you train a network by the latter concept due to sufferin
 
 Example: [Strings and organ](https://github.com/andriesbron/Cneurons/tree/master/examples/stringsandorgan)
 
-Demonstrates a workflow for detecting sound using autocorrelation, in this case, strings in E from cathedral organ in A recorded from Garageband.
+Demonstrates a workflow for detecting sound using autocorrelation, in this case, strings in E from cathedral organ in A recorded in Garageband.
 
