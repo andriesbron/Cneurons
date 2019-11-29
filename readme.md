@@ -13,17 +13,17 @@ First a philosophic note, if you don't want that, scroll down to the example(s).
 
 The highest form of intelligence is to apply the **scientific method**, below that is **artificial intelligence**. Artificial intelligence was developed through the scientific method. The **preferable method** to solve a technological problem is, therefore, the **scientific method**.
 
-The difference is that the **scientific method produces a mathematically exact description of a behavior** within the limits of its tolerances. **Artificial intelligence produces a mathematical relation between inputs and outputs** according the way you tell it that the relation is. So, a neural network **cannot be more powerful than the mind by which it was trained**. There is no doubt, there are very powerful neural networks and concepts of artificial intelligence. Artificial intelligence is imho **unbeatable in pattern recognition**.
+The **scientific method generates a mathematically description of a behavior**. **Artificial intelligence assumes a mathematical relation between inputs and outputs** according the way you teach it. So, a neural network **cannot be more powerful than the mind by which it was trained**. There is no doubt, there are very powerful neural networks and concepts of artificial intelligence.
 
 The most important thing when starting with neural networks and artificial intelligence is this:
 
 **Two equations that share more than two unknown variables, cannot be solved. Also not by a neural network.**
 
-Or, in case you train it by ignorance:
+Or:
 
-**Two equations that share more than two unknown variables, can be solved but have multiple solutions. Also in a neural network.**
+**Two equations that share more than two unknown variables, can be solved, however, having multiple solutions. Also in a neural network.**
 
-It is very likely that you train a network by the latter concept.
+It is very likely that you train a network by the latter concept due to suffering an overview in the data.
 
 # Examples
 ## Detection of sound
