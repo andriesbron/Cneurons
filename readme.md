@@ -11,7 +11,7 @@ First a philosophic note, if you don't want that, scroll down to the example(s).
 
 # Important to understand
 
-The highest form of intelligence is to apply the **scientific method**, below that is **artificial intelligence**. Artificial intelligence was developed through the scientific method. The **preferable method** to solve a technological problem is, therefore, the **scientific method**.
+The highest form of intelligence is to apply the **[scientific method](https://en.wikipedia.org/wiki/Scientific_method)**, below that is **[artificial intelligence](https://en.wikipedia.org/wiki/Artificial_intelligence)**. Artificial intelligence was developed through the scientific method. The **preferable method** to solve a technological problem is, therefore, the **scientific method**.
 
 The **scientific method generates a mathematically description of a behavior**. **Artificial intelligence assumes a mathematical relation between inputs and outputs** according the way you teach it. So, a neural network **cannot be more powerful than the mind by which it was trained**. There is no doubt, there are very powerful neural networks and concepts of artificial intelligence.
 
