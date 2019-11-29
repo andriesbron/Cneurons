@@ -15,7 +15,7 @@ The highest form of intelligence is to apply the **[scientific method](https://e
 
 The **scientific method generates a mathematically description of a behavior**. **Artificial intelligence assumes a mathematical relation between inputs and outputs** according the way you teach it. So, a neural network **cannot be more powerful than the mind by which it was trained**. There is no doubt, there are very powerful neural networks and concepts of artificial intelligence, even more powerful than my mind.
 
-The most important thing when starting with neural networks and artificial intelligence is this:
+Important to know when dealing with neural networks is the following:
 
 **Two equations that share more than two unknown variables, cannot be solved. Also not by a neural network.**
 
