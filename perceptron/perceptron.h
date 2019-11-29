@@ -46,7 +46,7 @@ typedef struct PRCPT_perceptrons_16u {
 } PRCPT_perceptron_16_t;
 
 /**
- * @brief 16 bits unsigned perceptron.
+ * @brief float perceptron.
  */
 typedef struct PRCPT_perceptrons_float {
     uint16_t inputLength;
