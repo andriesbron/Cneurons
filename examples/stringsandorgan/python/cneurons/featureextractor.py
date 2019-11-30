@@ -159,7 +159,7 @@ class featureextractor:
     
         return t, y
 
-    def makeSoundSamples(self, infile, outfile, duration, start=0, end=20, prefix="sound_")
+    def makeSoundSamples(self, infile, outfile, duration, start=0, end=20, prefix="sound_"):
         '''
         @param infile input file to make samples from. INCLUDE EXTENTION!
         @param outfile output file of the sample. DON'T ADD EXTENSION!
