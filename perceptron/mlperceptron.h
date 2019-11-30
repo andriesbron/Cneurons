@@ -1,9 +1,8 @@
 //
 //  mlperceptron.h
-//  cNeurons
+//  Cneurons
 //
 //  Created by andries bron on 11/30/19.
-//  Copyright © 2019 inourplace. All rights reserved.
 //
 
 #ifndef mlperceptron_h
