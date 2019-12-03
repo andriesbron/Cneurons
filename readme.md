@@ -23,7 +23,7 @@ Or:
 
 **Two equations that share more than two unknown variables, can be solved, however, having multiple solutions. Also in a neural network.**
 
-It is very likely that you train a network by the latter concept due to suffering an overview in the data.
+It is very likely that you train a network by the latter concept due to suffering an overview on the data.
 
 # Examples
 ## Detection of sound
