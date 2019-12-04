@@ -44,6 +44,7 @@ typedef struct PRCPT_perceptrons_8u {
  * @brief 16 bits unsigned perceptron.
  */
 typedef struct PRCPT_perceptrons_16u {
+    PRCPT_activation_t activation;
     uint16_t inputLength;
     uint16_t *weights;
     uint16_t intercept;
@@ -53,6 +54,7 @@ typedef struct PRCPT_perceptrons_16u {
  * @brief float perceptron.
  */
 typedef struct PRCPT_perceptrons_float {
+    PRCPT_activation_t activation;
     uint16_t inputLength;
     float *weights;
     float intercept;
