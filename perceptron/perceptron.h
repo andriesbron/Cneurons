@@ -26,11 +26,15 @@ typedef enum PRCPT_returnValues {
   , PRCPT_UNKNOWN_ERROR
 } PRCPT_returnValue;
 
+typedef enum PRCPT_activationTypes {
+    PRCPT_RELU
+} PRCPT_activation_t;
 
 /**
  * @brief 8 bits unsigned perceptron.
  */
 typedef struct PRCPT_perceptrons_8u {
+    PRCPT_activation_t activation;
     uint16_t inputLength;
     uint8_t *weights;
     uint8_t intercept;
