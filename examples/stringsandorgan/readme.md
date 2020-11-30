@@ -5,7 +5,7 @@ Include stringsandorgan.h in the main program and rund EXAMPLE_stringsOrCathedra
 The python directory contains the training session in which the perceptron parameters are generated and exported to include files for stringsandorgan.h. Have fun.
 
 ## Attention
-It is not said that there is no other sound that will produce the same features as the strings sound. To be more accurate, an FFT could be used to generate the features.
+It is not said that there is no other sound that will produce the same features as the strings sound. To be more accurate, an FFT could be used to generate the features. In other words, I would not use this to distinguish strings from organs... 
 
 ## Concept of application
 
